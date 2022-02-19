@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/*google-noto sans font - subset diet ver - 5ea*/
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans Thin'), local('Noto Sans Thin'), local('Noto Sans Thin');
+    src: url(../fonts/NotoSans-Thin.woff2) format('woff2'),
+         url(../fonts/NotoSans-Thin.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
+    src: url(../fonts/NotoSans-Light.woff2) format('woff2'),
+         url(../fonts/NotoSans-Light.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
+    src: url(../fonts/NotoSans-Regular.woff2) format('woff2'),
+         url(../fonts/NotoSans-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
+    src: url(../fonts/NotoSans-Medium.woff2) format('woff2'),
+         url(../fonts/NotoSans-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans bold'), local('Noto Sans bold'), local('Noto Sans bold');
+    src: url(../fonts/NotoSans-Bold.woff2) format('woff2'),
+         url(../fonts/NotoSans-Bold.woff) format('woff');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Noto Sans black'), local('Noto Sans black'), local('Noto Sans black');
+    src: url(../fonts/NotoSans-Black.woff2) format('woff2'),
+  	     url(../fonts/NotoSans-Black.woff) format('woff');
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta charset="utf-8">
+  <!-- 검색으로 표시되지 않도록 하는 장치 -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+  <!-- 이 아래로는 캐시 저장 방지 -->
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="No-Cache">
+
+  <title>CSS 레이아웃 배치</title>
+
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/notosans_compressed.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/layout-presentation.min.css">
+
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/crossbrowsing.js"></script>
+  <script src="./js/prefixfree.min.js"></script>
+</head>
+<body>
+  <div class="page-container" page-no="1">
+    <header id="header" class="page-header">
+      <div class="split-side header-left">
+        <h2>CSS 레이아웃의 배치</h2>
+      </div>
+      <div class="split-side header-right">
+        <button class="view-example-btn">
+          <span><i class="fas fa-th"></i></span>
+        </button>
+      </div>
+    </header>
+    <main id="contents" class="page-contents">
+      <section class="mc" page-no="0">
+        <div class="slide-wrap">
+          <div class="slide-intro">
+            <h1>CSS 활용하기</h1>
+            <p>정렬을 위한 여러가지 CSS 기법</p>
+          </div>
+        </div>
+      </section>
+      <section class="mc" page-no="1">
+        <div class="slide-wrap">
+          <header class="slide-title">
+            <h3>개요</h3>
+          </header>
+          <div class="slide-contents" desc-index="0">
+            <ol class="desc-list index-list">
+              <li desc-index="0">1. 셀렉터와 우선순위</li>
+              <li desc-index="1">2. 가상 선택자</li>
+            </ol>
+            <div class="desc-contents">
+              <ul class="desc-list description-list" desc-index="0">
+                <li>셀렉터와 우선순위</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="1">
+                <li>가상 선택자</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mc" page-no="2">
+        <div class="slide-wrap">
+          <header class="slide-title">
+            <h3>BOX MODEL</h3>
+          </header>
+          <div class="slide-contents" desc-index="0">
+            <ol class="desc-list index-list">
+              <li desc-index="0">1. 셀렉터와 우선순위</li>
+              <li desc-index="1">2. 가상 선택자</li>
+            </ol>
+            <div class="desc-contents">
+              <ul class="desc-list description-list" desc-index="0">
+                <li>셀렉터와 우선순위</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="1">
+                <li>가상 선택자</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-example">
+          <div class="option-panel">
+            <dl class="option-items" data-option="boxSizing">
+              <dt class="option-name">box-sizing:</dt>
+              <dd class="option-select-list">
+                <label for="option_borderBox" class="option-label">
+                  <input id="option_borderBox" class="option-check" name="option_boxSizing" value="border-box" type="radio" checked>
+                  <span>border-box</span>
+                </label>
+                <label for="option_contentBox" class="option-label">
+                  <input id="option_contentBox" class="option-check" name="option_boxSizing" value="content-box" type="radio">
+                  <span>content-box</span>
+                </label>
+              </dd>
+            </dl>
+          </div>
+          <div class="example-view">
+            <div class="example-container" data-option="boxSizing">
+              <div class="example-box box-sizing-box">
+                <span>box</span>
+              </div>
+            </div>
+          </div>
+          <div class="example-desc">
+            <ul>
+              <li>Box Width: <span id="boxSizing_width">300</span></li>
+              <li>Box Height: <span id="boxSizing_height">150</span></li>
+            </ul>
+            <ul class="color-desc">
+              <li class="margin">margin</li>
+              <li class="padding">padding</li>
+              <li class="border">border</li>
+              <li class="contents-area">contents area</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="mc" page-no="3">
+        <div class="slide-wrap">
+          <header class="slide-title">
+            <h3>BOX MODEL</h3>
+          </header>
+          <div class="slide-contents" desc-index="0">
+            <ol class="desc-list index-list">
+              <li desc-index="0">1. 셀렉터와 우선순위</li>
+              <li desc-index="1">2. 가상 선택자</li>
+            </ol>
+            <div class="desc-contents">
+              <ul class="desc-list description-list" desc-index="0">
+                <li>CSS</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="1">
+                <li>가상 선택자</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-example">
+            <div class="option-panel">
+                <dl class="option-items" data-option="display">
+                    <dt class="option-name">display:</dt>
+                    <dd class="option-select-list">
+                        <label for="option_block" class="option-label">
+                            <input id="option_block" class="option-check" type="radio" name="option_display" value="block" checked>
+                            <span>block</span>
+                        </label>
+                        <label for="option_inline" class="option-label">
+                            <input id="option_inline" class="option-check" type="radio" name="option_display" value="inline">
+                            <span>inline</span>
+                        </label>
+                        <label for="option_inlineblock" class="option-label">
+                            <input id="option_inlineblock" class="option-check" type="radio" name="option_display" value="inline-block">
+                            <span>inline-block</span>
+                        </label>
+                    </dd>
+                </dl>
+            </div>
+            <div class="example-view">
+                <div class="container">
+                    <div class="example-box display-box">1</div>
+                    <div class="example-box display-box">2</div>
+                    <div class="example-box display-box">3</div>
+                    <div class="example-box display-box">4</div>
+                    <div class="example-box display-box">5</div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <button class="slide-btn" slide-btn-type="prev">
+        <span><i class="fas fa-chevron-left"></i></span>
+      </button>
+      <button class="slide-btn" slide-btn-type="next">
+        <span><i class="fas fa-chevron-right"></i></span>
+      </button>
+    </main>
+    <footer id="footer" class="page-footer">
+        <div class="split-side footer-left">
+            <div class="page-status">1 / 1</div>
+        </div>
+        <div class="split-side footer-right">
+        </div>
+    </footer>
+  </div>
+  
+  <script defer src="./js/option.js"></script>
+</body>
+</html>
