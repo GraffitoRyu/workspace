@@ -317,9 +317,17 @@ h1, h2, h3, h4, h5, h6 {
       padding:rem(16px) rem(24px);
       border-radius:rem(8px);
       background: #656885;
+      display:flex;
+      flex-wrap:wrap;
       .option-items {
+        width:100%;
+        padding:rem(4px) 0;
         display:flex;
         align-items:center;
+        &.inline-items {
+          width:auto;
+          display:inline-flex;
+        }
         .option-name {
           margin-right:rem(16px);
           font-size:rem(16px);
@@ -341,11 +349,20 @@ h1, h2, h3, h4, h5, h6 {
               border:1px solid white;
               appearance: auto;
             }
+            .option-input {
+              width:rem(80px);
+              height:rem(24px);
+              border-radius:rem(4px);
+              padding:0 rem(16px);
+              font-size:rem(16px);
+              background:#474965;
+            }
             span {
               margin-left:rem(8px);
               font-size:rem(16px);
               font-weight:400;
               color:#babfdf;
+              letter-spacing: 0;
             }
             .option-check:checked + span {
               color:#00ff96;
@@ -383,6 +400,7 @@ h1, h2, h3, h4, h5, h6 {
         display:flex;
         align-items:center;
         justify-content: center;
+        text-align:center;
         background: #303247;
         &:not(.box-sizing-box) {
           border-radius:rem(8px);

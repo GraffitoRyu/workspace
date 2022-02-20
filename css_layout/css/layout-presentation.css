@@ -523,15 +523,29 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.83333rem 1.25rem;
   border-radius: 0.41667rem;
   background: #656885;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .mc .slide-example .option-panel .option-items {
+  width: 100%;
+  padding: 0.20833rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.mc .slide-example .option-panel .option-items.inline-items {
+  width: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .mc .slide-example .option-panel .option-items .option-name {
@@ -571,11 +585,21 @@ h1, h2, h3, h4, h5, h6 {
           appearance: auto;
 }
 
+.mc .slide-example .option-panel .option-items .option-select-list .option-label .option-input {
+  width: 4.16667rem;
+  height: 1.25rem;
+  border-radius: 0.20833rem;
+  padding: 0 0.83333rem;
+  font-size: 0.83333rem;
+  background: #474965;
+}
+
 .mc .slide-example .option-panel .option-items .option-select-list .option-label span {
   margin-left: 0.41667rem;
   font-size: 0.83333rem;
   font-weight: 400;
   color: #babfdf;
+  letter-spacing: 0;
 }
 
 .mc .slide-example .option-panel .option-items .option-select-list .option-label .option-check:checked + span {
@@ -629,6 +653,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
   background: #303247;
 }
 

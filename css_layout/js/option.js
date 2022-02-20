@@ -12,7 +12,10 @@ $(document).ready(()=>{
       const optionItem = options.eq(o);
       const optionCategory = optionItem.attr('data-option');
       const optionName = `option_${optionCategory}`;
-      exampleOptions[`page${p}`][optionCategory] = $(`.option-check[name=${optionName}]:checked`).val();
+      const optionInput = optionItem.find('input').eq(0).attr('type')=='radio'?optionItem.find('input:checked'):optionItem.find('input');
+      const optionKey = optionInput.attr('data-key');
+      const optionVal = optionInput.val();
+      exampleOptions[`page${p}`][optionCategory] = [optionKey, optionVal];
     }
   }
   
@@ -73,8 +76,22 @@ $(document).ready(()=>{
     const optionName = radio.attr('name');
     console.log(`optionName: ${optionName}`)
     const optionCateogry = optionName.split('_')[1];
+    const optionKey = radio.attr('data-key');
     const optionVal = radio.val();
-    exampleOptions[`page${pageNo}`][optionCateogry] = optionVal;
+    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal];
+  
+    console.log(`[change option] ${optionCateogry}: ${optionVal}`)
+    applyOption(optionCateogry)
+  });
+  $('.option-input').on('change', function (e) {
+    const textInput = $(this);
+    const pageNo = $(this).closest('.mc').attr('page-no');
+    const optionName = textInput.attr('name');
+    console.log(`optionName: ${optionName}`)
+    const optionCateogry = optionName.split('_')[1];
+    const optionKey = textInput.attr('data-key');
+    const optionVal = textInput.val();
+    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal];
   
     console.log(`[change option] ${optionCateogry}: ${optionVal}`)
     applyOption(optionCateogry)
@@ -95,11 +112,14 @@ function rem_(px) {
 function applyOption(category) {
   const pageNo = $('.page-container').attr('page-no')*1;
   const page = $(`.mc[page-no="${pageNo}"]`);
-  const optionVal = exampleOptions[`page${pageNo}`][category];
+  const optionKey = exampleOptions[`page${pageNo}`][category][0];
+  const optionVal = exampleOptions[`page${pageNo}`][category][1];
 
   if (pageNo == 2) {
     // box-sizing
-    page.find('.example-box').css('box-sizing', optionVal)
+    page.find('.example-box').css(optionKey, optionVal)
   } else if (pageNo == 3) {
+    if (category == 'textAlign') page.find('.example-container').css(optionKey, optionVal);
+    else page.find('.example-box').css(optionKey, optionVal);
   }
 }
