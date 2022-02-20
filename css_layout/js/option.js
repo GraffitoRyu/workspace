@@ -16,7 +16,9 @@ $(document).ready(()=>{
     }
   }
   
-  $('.page-status').text(`${pages.attr('page-no')*1+1} / ${pages.length}`);
+  $('.page-status').text(`${pageContainer.attr('page-no')*1+1} / ${pages.length}`);
+  if ($(`.mc[page-no="${pageContainer.attr('page-no')}"]`).attr('example') == 'no') $('.view-example-btn').hide();
+  else $('.view-example-btn').show();
   
   $('.view-example-btn').on('click', function(){
     const pageNo = pageContainer.attr('page-no');
@@ -56,6 +58,9 @@ $(document).ready(()=>{
     }
     pageContainer.attr('page-no', pageNo)
 
+    if ($(`.mc[page-no="${pageContainer.attr('page-no')}"]`).attr('example') == 'no') $('.view-example-btn').hide();
+    else $('.view-example-btn').show();
+    
     $('.page-status').text(`${pageNo + 1} / ${pages.length}`);
   })
 

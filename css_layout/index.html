@@ -42,7 +42,7 @@
       </div>
     </header>
     <main id="contents" class="page-contents">
-      <section class="mc" page-no="0">
+      <section class="mc" page-no="0" example="no">
         <div class="slide-wrap">
           <div class="slide-intro">
             <h1>CSS 활용하기</h1>
@@ -50,43 +50,66 @@
           </div>
         </div>
       </section>
-      <section class="mc" page-no="1">
+      <section class="mc" page-no="1" example="no">
         <div class="slide-wrap">
           <header class="slide-title">
             <h3>개요</h3>
           </header>
           <div class="slide-contents" desc-index="0">
             <ol class="desc-list index-list">
-              <li desc-index="0">1. 셀렉터와 우선순위</li>
-              <li desc-index="1">2. 가상 선택자</li>
+              <li desc-index="0">1. 셀렉터</li>
+              <li desc-index="1">2. 우선순위</li>
+              <li desc-index="2">3. 가상 셀렉터</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
-                <li>셀렉터와 우선순위</li>
+                <li>셀렉터</li>
+                <ul class="inner-list">
+                  <li>CSS 적용을 위한 대상 지정</li>
+                  <li>tag, id, class, *, 가상 셀렉터, 태그속성, 선택자 조합 등</li>
+                  <li>각 셀렉터들을 조합하여 우선순위 등을 조정할 수 있음/li>
+                </ul>
               </ul>
               <ul class="desc-list description-list" desc-index="1">
-                <li>가상 선택자</li>
+                <li>기본 우선순위</li>
+                <ol class="inner-list order-list">
+                  <li>!important</li>
+                  <li>인라인 스타일 (html 구조 내 태그에 직접 style 속성으로 부여한 css)</li>
+                  <li>id (#selector)</li>
+                  <li>class (.selector)</li>
+                  <li>tag (div)</li>
+                  <li>*</li>
+                </ol>
+              </ul>
+              <ul class="desc-list description-list" desc-index="2">
+                <li>가상 셀렉터는 가상 클래스(인터랙션, 구조 등)와 가상 엘리먼트로 나뉨</li>
+                <li>가상 셀렉터 (자주 사용하는 것만 나열)</li>
+                <ul class="inner-list">
+                  <li>가상 클래스(인터랙션) - :hover, :active, :focus, :checked, :selection</li>
+                  <li>가상 클래스(구조) - nth-child(n), :first-child, :last-child</li>
+                  <li>가상 엘리먼트 - :before, :after</li>
+                </ul>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section class="mc" page-no="2">
+      <section class="mc" page-no="2" example="yes">
         <div class="slide-wrap">
           <header class="slide-title">
-            <h3>BOX MODEL</h3>
+            <h3>박스 모델</h3>
           </header>
           <div class="slide-contents" desc-index="0">
             <ol class="desc-list index-list">
-              <li desc-index="0">1. 셀렉터와 우선순위</li>
-              <li desc-index="1">2. 가상 선택자</li>
+              <li desc-index="0">1. 박스 모델</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
-                <li>셀렉터와 우선순위</li>
-              </ul>
-              <ul class="desc-list description-list" desc-index="1">
-                <li>가상 선택자</li>
+                <li>마크업 구성요소들은 박스 형태로 정의</li>
+                <li>각 요소들의 박스형태를 어떻게 배치하느냐?</li>
+                <li>마크업 구성 요소는 margin영역, padding영역, border영역, contents영역으로 구성</li>
+                <li>박스의 크기에 대한 기준을 "contents 영역"으로 할 것인지, "border 영역"으로 할 것인지에 따라 css 구성법이 달라짐</li>
+                <li>브라우저 기본값은 "contents 영역"이지만, 보통은 "border 영역"을 기준으로 변경하여 작업을 진행함</li>
               </ul>
             </div>
           </div>
@@ -128,19 +151,116 @@
           </div>
         </div>
       </section>
-      <section class="mc" page-no="3">
+      <section class="mc" page-no="3" example="yes">
         <div class="slide-wrap">
           <header class="slide-title">
-            <h3>BOX MODEL</h3>
+            <h3>display :: block / inline</h3>
           </header>
           <div class="slide-contents" desc-index="0">
             <ol class="desc-list index-list">
-              <li desc-index="0">1. 셀렉터와 우선순위</li>
-              <li desc-index="1">2. 가상 선택자</li>
+              <li desc-index="0">1. display 개요</li>
+              <li desc-index="1">2. block</li>
+              <li desc-index="2">3. inline</li>
+              <li desc-index="3">4. inline-block</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
-                <li>CSS</li>
+                <li>마크업의 구성요소는 display 속성을 통해 배치되는 특성을 지정할 수 있음</li>
+                <li>display의 대표적인 속성</li>
+                <ul class="inner-list">
+                  <li>block</li>
+                  <li>inline</li>
+                  <li>flex</li>
+                  <li>grid</li>
+                  <li>table</li>
+                  <li>none</li>
+                </ul>
+              </ul>
+              <ul class="desc-list description-list" desc-index="1">
+                <li>영역, 제목, 문단, 목록 등 컨텐츠를 묶는 요소 등에 기본 값으로 지정되어있음</li>
+                <li>부모 요소의 영역 시작부터 끝까지 차지하는 특성을 지님</li>
+                <li>상하 배치에 활용</li>
+                <li>width, height 적용 O</li>
+                <li>margin, padding 적용 O</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="2">
+                <li>텍스트, 이미지, 링크 등 컨텐츠 구성 요소 등에 기본 값으로 지정되어있음</li>
+                <li>요소 하나하나가 글자처럼 취급되는 특성을 지님</li>
+                <li>좌우 배치에 활용</li>
+                <li>width, height 적용 X</li>
+                <li>margin, padding 부분 적용 (좌우 방향에 대해서만 적용됨)</li>
+                <li>글자 정렬을 위한 CSS 속성 적용 O (수평, 수직 정렬 등)</li>
+                <li>부모 영역에 나열될 때, 영역보다 많은 것이 나열되는 경우 줄바꿈처럼 적용됨</li>
+                <li>인라인 요소 간의 고유한 간격이 적용됨</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="3">
+                <li>inline의 특성 기반에, block의 특성이 가미된 형태</li>
+                <li>block 특성에서 다음이 적용됨</li>
+                <ul class="inner-list">
+                  <li>width, height 지정 가능</li>
+                  <li>margin, padding의 상하 지정까지 모두 가능</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-example">
+          <div class="option-panel">
+            <dl class="option-items" data-option="display">
+              <dt class="option-name">display:</dt>
+              <dd class="option-select-list">
+                <label for="option_block" class="option-label">
+                  <input id="option_block" class="option-check" name="option_display" value="block"  type="radio" checked>
+                  <span>block</span>
+                </label>
+                <label for="option_inline" class="option-label">
+                  <input id="option_inline" class="option-check" name="option_display" value="inline" type="radio">
+                  <span>inline</span>
+                </label>
+                <label for="option_inlineblock" class="option-label">
+                  <input id="option_inlineblock" class="option-check" name="option_display" value="inline-block" type="radio">
+                  <span>inline-block</span>
+                </label>
+              </dd>
+            </dl>
+          </div>
+          <div class="example-view">
+            <div class="example-container" data-option="display">
+              <div class="example-box display-box">1</div>
+              <div class="example-box display-box">2</div>
+              <div class="example-box display-box">3</div>
+              <div class="example-box display-box">4</div>
+              <div class="example-box display-box">5</div>
+            </div>
+          </div>
+          <div class="example-desc">
+            <ul>
+              <li>Box Width: <span id="boxSizing_width">300</span></li>
+              <li>Box Height: <span id="boxSizing_height">150</span></li>
+            </ul>
+            <ul class="color-desc">
+              <li class="margin">margin</li>
+              <li class="padding">padding</li>
+              <li class="border">border</li>
+              <li class="contents-area">contents area</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="mc" page-no="4" example="yes">
+        <div class="slide-wrap">
+          <header class="slide-title">
+            <h3>display :: block / inline</h3>
+          </header>
+          <div class="slide-contents" desc-index="0">
+            <ol class="desc-list index-list">
+              <li desc-index="0">1. block</li>
+              <li desc-index="1">2. inline</li>
+              <li desc-index="2">3. inline-block</li>
+            </ol>
+            <div class="desc-contents">
+              <ul class="desc-list description-list" desc-index="0">
+                <li>부모 요소의 영역 시작부터 끝까지 차지</li>
               </ul>
               <ul class="desc-list description-list" desc-index="1">
                 <li>가상 선택자</li>
@@ -191,6 +311,7 @@
             <div class="page-status">1 / 1</div>
         </div>
         <div class="split-side footer-right">
+            <div class="logo"><img src="./img/3secondz_logo_new_white.svg" alt="3secondz"></div>
         </div>
     </footer>
   </div>

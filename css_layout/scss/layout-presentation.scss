@@ -7,6 +7,7 @@
 * {
   color: #e7e9f6;
   font-family:'Roboto', 'Noto Sans KR', sans-serif;
+  word-break:keep-all;
 }
 
 html, body {
@@ -19,6 +20,9 @@ html {
   font-size:19.2px;
   &[mobile=on] {
     font-size:1.4vw;
+  }
+  @media only screen and (max-width:1400px) {
+    font-size:1.2vw;
   }
 }
 
@@ -206,16 +210,46 @@ h1, h2, h3, h4, h5, h6 {
       display:flex;
       .desc-list {
         height:100%;
-        li {
+        &>li {
           width:100%;
-          margin:rem(8px) 0;
-          font-size:rem(16px);
-          line-height:rem(24px);
+          margin:rem(16px) 0;
+          color:#cfd2ec;
+        }
+        .inner-list {
+          width:100%;
+          padding:0 rem(16px);
+          margin-bottom:rem(16px);
+          transform:translateY(rem(-8px));
+          &>li {
+            padding:rem(8px) 0 rem(8px) rem(16px);
+            font-size:rem(20px);
+            color:#b2b5cb;
+            line-height:rem(28px);
+            letter-spacing: 0;
+            &:before {
+              text-indent:rem(-16px);
+              display:inline-block;
+              content: '\2022';
+            }
+          }
+          &.order-list {
+            padding:0 rem(16px) 0 rem(32px);
+            &>li {
+              display:list-item;
+              list-style: decimal;
+              padding:rem(8px) 0;
+              &:before { display:none; }
+              &::marker { color:#646889; font-weight:500; }
+            }
+          }
         }
         &.index-list {
-          width:rem(400px);
-          margin-right:rem(50px);
-          li {
+          width:35%;
+          // width:rem(400px);
+          margin-right:rem(48px);
+          &>li {
+            font-size:rem(24px);
+            line-height:rem(32px);
             color:#656885;
             font-weight:500;
             transition:all 0.3s;
@@ -229,12 +263,15 @@ h1, h2, h3, h4, h5, h6 {
           display:none;
           width:100%;
           height:100%;
-          li {
-            padding-left:rem(8px);
+          &>li {
+            padding-left:rem(16px);
+            font-size:rem(24px);
+            line-height:rem(32px);
+            font-weight:400;
             &:before {
-              text-indent:rem(-8px);
+              text-indent:rem(-16px);
               display:inline-block;
-              content: '\2022';
+              content: '-';
             }
           }
         }
@@ -247,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
         &[desc-index="#{$descIdx}"] {
           .desc-list {
             &.index-list {
-              li[desc-index="#{$descIdx}"] {
+              &>li[desc-index="#{$descIdx}"] {
                 color:#00ff96;
                 letter-spacing: 0;
                 cursor:not-allowed;
@@ -467,9 +504,6 @@ h1, h2, h3, h4, h5, h6 {
     .mc[page-no="#{$pageNo}"] {
       opacity: 1;
       z-index:10;
-    }
-    @if ($pageNo < 2) {
-      .view-example-btn {display:none;}
     }
   }
 }
