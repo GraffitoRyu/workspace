@@ -121,5 +121,7 @@ function applyOption(category) {
   } else if (pageNo == 3) {
     if (category == 'textAlign') page.find('.example-container').css(optionKey, optionVal);
     else page.find('.example-box').css(optionKey, optionVal);
+  } else if (pageNo == 4) {
+    page.find('.example-container').css(optionKey, optionVal);
   }
 }

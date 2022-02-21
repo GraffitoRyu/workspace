@@ -328,6 +328,9 @@ h1, h2, h3, h4, h5, h6 {
           width:auto;
           display:inline-flex;
         }
+        &.ml {
+          margin-left:rem(24px);
+        }
         .option-name {
           margin-right:rem(16px);
           font-size:rem(16px);
@@ -391,6 +394,9 @@ h1, h2, h3, h4, h5, h6 {
           background: #ffb86b;
           display:block;
         }
+        &[data-option=flex] {
+          display:flex;
+        }
       }
       .example-box {
         font-size:rem(24px);
@@ -453,6 +459,9 @@ h1, h2, h3, h4, h5, h6 {
             top:50%;
             transform:translateY(-50%);
           }
+        }
+        &.flex-box {
+          padding:rem(40px);
         }
       }
     }
