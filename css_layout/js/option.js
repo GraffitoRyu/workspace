@@ -5,17 +5,21 @@ const pageContainer = $('.page-container');
 const pages = $('.mc');
 
 $(document).ready(()=>{
+  console.log(pages.length)
+  $('.slide-btn').addClass('off');
+  if (pages.length > 0) $('.slide-btn[slide-btn-type=next]').removeClass('off')
+
   for (let p = 0; p < pages.length; p++) {
     exampleOptions[`page${p}`] = {};
-    const options = pages.eq(p).find('.option-items');
+    const options = pages.eq(p).attr('page-no',p).find('.option-items');
     for (let o = 0; o < options.length; o++) {
       const optionItem = options.eq(o);
       const optionCategory = optionItem.attr('data-option');
-      const optionName = `option_${optionCategory}`;
       const optionInput = optionItem.find('input').eq(0).attr('type')=='radio'?optionItem.find('input:checked'):optionItem.find('input');
+      const optionTarget = optionInput.attr('data-target');
       const optionKey = optionInput.attr('data-key');
       const optionVal = optionInput.val();
-      exampleOptions[`page${p}`][optionCategory] = [optionKey, optionVal];
+      exampleOptions[`page${p}`][optionCategory] = [optionKey, optionVal, optionTarget];
     }
   }
   
@@ -76,9 +80,10 @@ $(document).ready(()=>{
     const optionName = radio.attr('name');
     console.log(`optionName: ${optionName}`)
     const optionCateogry = optionName.split('_')[1];
+    const optionTarget = radio.attr('data-target');
     const optionKey = radio.attr('data-key');
     const optionVal = radio.val();
-    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal];
+    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal, optionTarget];
   
     console.log(`[change option] ${optionCateogry}: ${optionVal}`)
     applyOption(optionCateogry)
@@ -89,9 +94,10 @@ $(document).ready(()=>{
     const optionName = textInput.attr('name');
     console.log(`optionName: ${optionName}`)
     const optionCateogry = optionName.split('_')[1];
+    const optionTarget = textInput.attr('data-target');
     const optionKey = textInput.attr('data-key');
     const optionVal = textInput.val();
-    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal];
+    exampleOptions[`page${pageNo}`][optionCateogry] = [optionKey, optionVal, optionTarget];
   
     console.log(`[change option] ${optionCateogry}: ${optionVal}`)
     applyOption(optionCateogry)
@@ -114,14 +120,7 @@ function applyOption(category) {
   const page = $(`.mc[page-no="${pageNo}"]`);
   const optionKey = exampleOptions[`page${pageNo}`][category][0];
   const optionVal = exampleOptions[`page${pageNo}`][category][1];
+  const optionTarget = exampleOptions[`page${pageNo}`][category][2];
 
-  if (pageNo == 2) {
-    // box-sizing
-    page.find('.example-box').css(optionKey, optionVal)
-  } else if (pageNo == 3) {
-    if (category == 'textAlign') page.find('.example-container').css(optionKey, optionVal);
-    else page.find('.example-box').css(optionKey, optionVal);
-  } else if (pageNo == 4) {
-    page.find('.example-container').css(optionKey, optionVal);
-  }
+  page.find(`.${optionTarget}`).css(optionKey, optionVal)
 }
