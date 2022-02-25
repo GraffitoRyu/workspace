@@ -311,7 +311,8 @@
             <ol class="desc-list index-list">
               <li desc-index="0">1. flexbox</li>
               <li desc-index="1">2. flexbox의 기본 규칙</li>
-              <li desc-index="2">3. 기본 설정 속성</li>
+              <li desc-index="2">3. 기본으로 설정된 속성</li>
+              <li desc-index="3">4. flexbox의 속성들</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
@@ -329,15 +330,22 @@
                     <img src="./img/flex-axis-img.png" alt="">
                   </figure>
                 </li>
+                <li>flexbox는 "플렉스 컨테이너"와 "플렉스 아이템"으로 구성</li>
+                <li>flexbox는 "기준축"과 "교차축"에 대한 정렬이 가능</li>
+                <li>설정된 정렬 기준축에 따라 선언 속성을 다르게 함</li>
               </ul>
               <ul class="desc-list description-list" desc-index="2">
-                <li>flexbox는 플렉스 컨테이너와 플렉스 아이템으로 구성</li>
-                <li>display:flex;로 선언하는 경우의 기본값은 다음과 같다.</li>
-                <ul class="inner-list">
-                    <li>정렬 기준축 : 좌우 정렬 (flex-direction: row;)</li>
-                    <li>기준축 정렬 : 시작점(좌측상단)에서 시작 (justify-content: flex-start;)</li>
-                    <li>교차축 정렬 : 영역 채우기 (align-items:stretch;)</li>
-                  </ul>
+                <li>display:flex;로 선언하는 경우, 기본값은 다음과 같다.</li>
+                <li>정렬 기준축 : 좌우 정렬 (flex-direction: row;)</li>
+                <li>기준축 정렬 : 시작점(좌측상단)에서 시작 (justify-content: flex-start;)</li>
+                <li>교차축 정렬 : 영역 채우기 (align-items:stretch;)</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="3">
+                <li>상세한 속성은 우선 다음에 소개하고, 배치에 관련된 것만 소개</li>
+                <li>flex-direction(정렬 기준축): row, column, row-reverse, column-reverse</li>
+                <li>justify-content(기준축 정렬): flex-start, center, flex-end, space-around, space-between, space-evenly</li>
+                <li>align-items(교차축 정렬): stretch, flex-start, center, flex-end, baseline</li>
+                <li>flex-wrap(줄바꿈 처리): nowrap, wrap, wrap-reverse</li>
               </ul>
             </div>
           </div>
@@ -378,7 +386,7 @@
                 </label>
               </dd>
             </dl>
-            <dl class="option-items inline-items ml" data-option="flexWrap">
+            <!-- <dl class="option-items inline-items ml" data-option="flexWrap">
               <dt class="option-name">flex-wrap:</dt>
               <dd class="option-select-list">
                 <label for="option_flexWrap" class="option-label">
@@ -389,7 +397,11 @@
                   <input id="option_flexWrap" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap" data-target="example-container" type="radio">
                   <span>wrap</span>
                 </label>
-              </dd>
+                <label for="option_flexWrapReverse" class="option-label">
+                  <input id="option_flexWrapReverse" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap-reverse" data-target="example-container" type="radio">
+                  <span>wrap-reverse</span>
+                </label>
+              </dd> -->
             </dl>
             <dl class="option-items" data-option="justifyContent">
               <dt class="option-name">justify-content:</dt>
@@ -448,10 +460,10 @@
           </div>
           <div class="example-view">
             <div class="example-container" data-option="flex">
-              <div class="example-box flex-box">1</div>
-              <div class="example-box flex-box">2</div>
+              <div class="example-box flex-box">111111111111</div>
+              <div class="example-box flex-box">222</div>
               <div class="example-box flex-box">3</div>
-              <div class="example-box flex-box">4</div>
+              <div class="example-box flex-box">444444</div>
               <div class="example-box flex-box">5</div>
             </div>
           </div>
