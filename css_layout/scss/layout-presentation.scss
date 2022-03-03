@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
       opacity:0.4;
       transition:color 0.3s, opacity 0.3s;
     }
-    &:hover {
+    &:active {
       span i {
         opacity:1;
       }
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 1;
         color: #00ff96;
       }
-      &:hover {
+      &:active {
         span i {
           opacity: 0.4;
           color:white;
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
       transition:opacity 0.3s;
     }
   }
-  &:hover {
+  &:active {
     span {
       background: rgba(255,255,255,0.05);
       i {
@@ -249,6 +249,24 @@ h1, h2, h3, h4, h5, h6 {
               display:inline-block;
               content: '\2022';
             }
+            span {
+              &.example-hover {
+                &:hover { color:#00ff96; }
+              }
+              &.example-active {
+                &:active { color:#00ff96; }
+              }
+              &.example-focus {
+                &:focus { color:#00ff96; }
+              }
+              &.example-selection {
+                &::selection {
+                  color:#d42323;
+                  font-weight:700;
+                  background:#00ff96;
+                }
+              }
+            }
           }
           &.order-list {
             padding:0 rem(16px) 0 rem(32px);
@@ -272,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
             font-weight:500;
             transition:all 0.3s;
             cursor:pointer;
-            &:hover {
+            &:active {
               color:white;
             }
           }
@@ -312,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
                 color:#00ff96;
                 letter-spacing: 0;
                 cursor:not-allowed;
-                &:hover {
+                &:active {
                   color:#00ff96;
                 }
               }
@@ -375,6 +393,10 @@ h1, h2, h3, h4, h5, h6 {
               border-radius:50%;
               border:1px solid white;
               appearance: auto;
+              -webkit-appearance: auto;
+              &:checked {
+                background: #00ff96;
+              }
             }
             .option-input {
               width:rem(80px);
@@ -414,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
         &[data-option=boxSizing] {
           width:auto;
           height:auto;
-          padding:rem(50px);
+          padding:rem(30px);
           background: #ffb86b;
           display:block;
         }
@@ -440,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
         &.box-sizing-box {
           width:rem(300px);
           height:rem(150px);
-          padding:rem(50px);
+          padding:rem(30px);
           border:rem(5px) solid red;
           background: #d7f1a3;
           span {
@@ -470,7 +492,7 @@ h1, h2, h3, h4, h5, h6 {
             width:rem(300px);
             height:rem(2px);
             background: #656885;
-            top:calc(100% + #{rem(80px)});
+            top:calc(100% + #{rem(60px)});
             left:50%;
             transform:translateX(-50%);
           }
@@ -479,13 +501,14 @@ h1, h2, h3, h4, h5, h6 {
             width:rem(2px);
             height:rem(150px);
             background: #656885;
-            left:calc(100% + #{rem(80px)});
+            left:calc(100% + #{rem(60px)});
             top:50%;
             transform:translateY(-50%);
           }
         }
         &.flex-box {
-          padding:rem(40px);
+          font-size:rem(16px);
+          padding:rem(10px);
         }
       }
     }

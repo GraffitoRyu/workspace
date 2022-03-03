@@ -77,7 +77,7 @@
                   </figure>
                 </li>
               </ul>
-              <ul class="desc-list description-list" desc-index="1">
+              <ul class="desc-list description-list" desc-index="2">
                 <li>위아래 박스가 그리드를 침범하지 않는 선에서 좌우 정렬이 가능한 경우, 하나의 row로 묶어서 정렬</li>
                 <li>좌우 박스가 그리드를 침범하지 않는 선에서 위아래 정렬이 가능한 경우, 하나의 column으로 묶어서 정렬</li>
                 <li>복합적인 경우, 가장 적게 묶이는 방향으로 영역 나누기 지정</li>
@@ -139,7 +139,7 @@
                 <ul class="inner-list">
                   <li>CSS 적용을 위한 대상 지정</li>
                   <li>tag, id, class, *, 가상 셀렉터, 태그속성, 선택자 조합 등</li>
-                  <li>각 셀렉터들을 조합하여 우선순위 등을 조정할 수 있음/li>
+                  <li>각 셀렉터들을 조합하여 우선순위 등을 조정할 수 있음</li>
                 </ul>
               </ul>
               <ul class="desc-list description-list" desc-index="1">
@@ -157,7 +157,7 @@
                 <li>가상 셀렉터는 가상 클래스(인터랙션, 구조 등)와 가상 엘리먼트로 나뉨</li>
                 <li>가상 셀렉터 (자주 사용하는 것만 나열)</li>
                 <ul class="inner-list">
-                  <li>가상 클래스(인터랙션) - :hover, :active, :focus, :checked, :selection</li>
+                  <li>가상 클래스(인터랙션) - <span class="example-hover">:hover</span>, <span class="example-active">:active</span>, <span class="example-focus" tabindex="-1">:focus</span>, <span class="example-checked">:checked</span>, <span class="example-selection">:selection</span></li>
                   <li>가상 클래스(구조) - nth-child(n), :first-child, :last-child</li>
                   <li>가상 엘리먼트 - :before, :after</li>
                 </ul>
@@ -312,7 +312,8 @@
               <li desc-index="0">1. flexbox</li>
               <li desc-index="1">2. flexbox의 기본 규칙</li>
               <li desc-index="2">3. 기본으로 설정된 속성</li>
-              <li desc-index="3">4. flexbox의 속성들</li>
+              <li desc-index="3">4. flexbox conatiner의 속성들</li>
+              <li desc-index="3">4. flexbox item의 속성들</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
@@ -336,16 +337,39 @@
               </ul>
               <ul class="desc-list description-list" desc-index="2">
                 <li>display:flex;로 선언하는 경우, 기본값은 다음과 같다.</li>
-                <li>정렬 기준축 : 좌우 정렬 (flex-direction: row;)</li>
-                <li>기준축 정렬 : 시작점(좌측상단)에서 시작 (justify-content: flex-start;)</li>
-                <li>교차축 정렬 : 영역 채우기 (align-items:stretch;)</li>
+                <li>정렬 기준축 : 좌우 정렬</li>
+                <ul class="inner-list">
+                  <li>flex-direction: row;</li>
+                </ul>
+                <li>기준축 정렬 : 시작점(좌측상단)에서 시작</li>
+                <ul class="inner-list">
+                  <li>justify-content: flex-start;</li>
+                </ul>
+                <li>교차축 정렬 : 영역 채우기</li>
+                <ul class="inner-list">
+                  <li>align-items: stretch;</li>
+                </ul>
               </ul>
               <ul class="desc-list description-list" desc-index="3">
-                <li>상세한 속성은 우선 다음에 소개하고, 배치에 관련된 것만 소개</li>
-                <li>flex-direction(정렬 기준축): row, column, row-reverse, column-reverse</li>
-                <li>justify-content(기준축 정렬): flex-start, center, flex-end, space-around, space-between, space-evenly</li>
-                <li>align-items(교차축 정렬): stretch, flex-start, center, flex-end, baseline</li>
-                <li>flex-wrap(줄바꿈 처리): nowrap, wrap, wrap-reverse</li>
+                <li>flex-direction(정렬 기준축)</li>
+                <ul class="inner-list">
+                  <li>row, column, row-reverse, column-reverse</li>
+                </ul>
+                <li>justify-content(기준축 정렬)</li>
+                <ul class="inner-list">
+                  <li>flex-start, center, flex-end, space-around, space-between, space-evenly</li>
+                </ul>
+                <li>align-items(교차축 정렬)</li>
+                <ul class="inner-list">
+                  <li>stretch, flex-start, center, flex-end, baseline</li>
+                </ul>
+                <li>flex-wrap(줄바꿈 처리)</li>
+                <ul class="inner-list">
+                  <li>nowrap, wrap, wrap-reverse</li>
+                </ul>
+              </ul>
+              <ul class="desc-list description-list" desc-index="4">
+                <li>공사중...</li>
               </ul>
             </div>
           </div>
