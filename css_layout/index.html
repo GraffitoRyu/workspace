@@ -493,6 +493,197 @@
           </div>
         </div>
       </section>
+      <section class="mc" page-no="" example="no">
+        <div class="slide-wrap">
+          <header class="slide-title">
+            <h3>reset.css</h3>
+          </header>
+          <div class="slide-contents" desc-index="0">
+            <ol class="desc-list index-list">
+              <li desc-index="0">1. 왜 reset하는가?</li>
+              <li desc-index="1">2. 초창기의 reset 작성</li>
+              <li desc-index="2">3. reset의 표준화</li>
+              <li desc-index="3">4. reset의 적용범위에 대한 고찰</li>
+            </ol>
+            <div class="desc-contents">
+              <ul class="desc-list description-list" desc-index="0">
+                <li>웹 화면은 문서를 공유하기 위해 탄생</li>
+                <li>한글, 워드와 같이 문서 서식이 필요했고, CSS가 없었던 시절에는 HTML 태그 고유의 기본 서식이 적용</li>
+                <li>CSS 탄생 후에는, 기존의 태그 고유 서식이 각 태그의 기본 CSS 성분이 되고,  이를 User-Agent StyleSheet라고 함</li>
+                <li>웹 표준성이 대두되기 전에는, 각 브라우저가 서로 다른 서식을 가짐 (특히 IE)</li>
+                <li>어느 환경에서 접속해도, 의도한 사용자 경험을 제공하기 위해(웹 호환성, cross browsing), 각 브라우저의 기본 설정을 초기화 하는 것이 reset.css의 역할</li>
+              </ul>
+              <ul class="desc-list description-list" desc-index="1">
+                <li>브라우저 기본서식을 초기화하는 것에 대한 고민</li>
+                <li>하드리셋</li>
+                <ul class="inner-list">
+                  <li>* {margin:0; padding:0; box-sizing:border-box; ... }</li>
+                  <li>일괄적인 reset이 가능하지만, * (Universal Selector)를 사용하는 경우 성능 이슈 발생</li>
+                </ul>
+                <li>에릭마이어 reset.css</li>
+                <ul class="inner-list">
+                  <li>reset.css 중 가장 오래되고 유명한 코드 (2011년이 가장 최신)</li>
+                  <li>시간이 지나며 사용되지 않은 태그 다수 포함됨</li>
+                  <li>reset을 위한 코드의 부피도 거대화되는 단점 발생</li>
+                  <li><a href="https://meyerweb.com/eric/tools/css/reset/index.html" target="_blank">레퍼런스</a></li>
+                </ul>
+              </ul>
+              <ul class="desc-list description-list" desc-index="2">
+                <li>reset.css에 대한 표준화 시도</li>
+                <ul class="inner-list">
+                  <li>각 브라우저 고유 기본 css인 User-Agent StyleSheet에도 표준이 생겼으나, 여전히 브라우저 간 동일한 서식은 아니었음</li>
+                  <li>normalize.css의 탄생</li>
+                </ul>
+                <li>Normalize.css</li>
+                <ul class="inner-list">
+                  <li>기존 에릭마이어 스타일의 reset은, 모든 태그를 comma로 연결한 거대한 덩어리의 코드 <a href="https://3secondz.com/" target="_blank">(예시)</a></li>
+                  <li>기존의 모든 태그를 한번에 선언하는 것이 아닌, 각 태그 또는 밀접한 관련이 있는 태그끼리 묶어 reset css 코드를 작성</li>
+                </ul>
+                <li>Opinionated Normalize</li>
+                <ul class="inner-list">
+                  <li>normalize.css 기반 위에, 더 나은 default 스타일을 추가</li>
+                </ul>
+              </ul>
+              <ul class="desc-list description-list" desc-index="3">
+                <li>reset은 각 퍼블리셔마다 다르고, 기업마다 자사 홈페이지에 활용하는 것이 모두 다름</li>
+                <li>최소한의 reset만 하는 경우도 있음</li>
+                <ul class="inner-list">
+                  <li>각 태그의 여백, 간격, 테두리 등 정도만 0으로 초기화</li>
+                </ul>
+                <li>개인적인 연구 - 카테고리화하여 컴팩트함을 유지하기 위한 방향으로 진행</li>
+                <ul class="inner-list">
+                  <li>동일한 태그끼리 묶어서 초기화</li>
+                  <li>시멘틱 태그 초기화</li>
+                  <li>가상 클래스에 대한 초기화</li>
+                  <li>입력폼, 인터랙션 관련 태그 초기화</li>
+                  <li>반응형에 대한 기본 세팅</li>
+                </ul>
+              </ul>
+              <ul class="desc-list description-list" desc-index="4">
+                <li>공사중...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-example">
+          <div class="option-panel">
+            <dl class="option-items inline-items" data-option="flex">
+              <dt class="option-name">display:</dt>
+              <dd class="option-select-list">
+                <label for="option_flex" class="option-label">
+                  <input id="option_flex" class="option-check" name="option_flex" data-target="example-container" data-key="display" value="flex"  type="radio" checked>
+                  <span>flex</span>
+                </label>
+                <label for="option_inlineFlex" class="option-label">
+                  <input id="option_inlineFlex" class="option-check" name="option_flex" data-target="example-container" data-key="display" value="inline-flex" type="radio">
+                  <span>inline-flex</span>
+                </label>
+              </dd>
+            </dl>
+            <dl class="option-items inline-items ml" data-option="flexDirection">
+              <dt class="option-name">flex-direction:</dt>
+              <dd class="option-select-list">
+                <label for="option_flexDirectionRow" class="option-label">
+                  <input id="option_flexDirectionRow" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="row"  type="radio" checked>
+                  <span>row</span>
+                </label>
+                <label for="option_flexDirectionCol" class="option-label">
+                  <input id="option_flexDirectionCol" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="column"  type="radio">
+                  <span>column</span>
+                </label>
+                <label for="option_flexDirectionRowRev" class="option-label">
+                  <input id="option_flexDirectionRowRev" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="row-reverse"  type="radio">
+                  <span>row-reverse</span>
+                </label>
+                <label for="option_flexDirectionColRev" class="option-label">
+                  <input id="option_flexDirectionColRev" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="column-reverse"  type="radio">
+                  <span>column-reverse</span>
+                </label>
+              </dd>
+            </dl>
+            <!-- <dl class="option-items inline-items ml" data-option="flexWrap">
+              <dt class="option-name">flex-wrap:</dt>
+              <dd class="option-select-list">
+                <label for="option_flexWrap" class="option-label">
+                  <input id="option_flexWrap" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="nowrap" data-target="example-container" type="radio" checked>
+                  <span>nowrap</span>
+                </label>
+                <label for="option_flexWrap" class="option-label">
+                  <input id="option_flexWrap" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap" data-target="example-container" type="radio">
+                  <span>wrap</span>
+                </label>
+                <label for="option_flexWrapReverse" class="option-label">
+                  <input id="option_flexWrapReverse" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap-reverse" data-target="example-container" type="radio">
+                  <span>wrap-reverse</span>
+                </label>
+              </dd> -->
+            </dl>
+            <dl class="option-items" data-option="justifyContent">
+              <dt class="option-name">justify-content:</dt>
+              <dd class="option-select-list">
+                <label for="option_justifyContentStart" class="option-label">
+                  <input id="option_justifyContentStart" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="flex-start"  type="radio" checked>
+                  <span>flex-start</span>
+                </label>
+                <label for="option_justifyContentCenter" class="option-label">
+                  <input id="option_justifyContentCenter" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="center"  type="radio">
+                  <span>center</span>
+                </label>
+                <label for="option_justifyContentEnd" class="option-label">
+                  <input id="option_justifyContentEnd" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="flex-end"  type="radio">
+                  <span>flex-end</span>
+                </label>
+                <label for="option_justifyContentSP" class="option-label">
+                  <input id="option_justifyContentSP" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-between"  type="radio">
+                  <span>space-between</span>
+                </label>
+                <label for="option_justifyContentSA" class="option-label">
+                  <input id="option_justifyContentSA" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-around"  type="radio">
+                  <span>space-around</span>
+                </label>
+                <label for="option_justifyContentSE" class="option-label">
+                  <input id="option_justifyContentSE" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-evenly"  type="radio">
+                  <span>space-evenly</span>
+                </label>
+              </dd>
+            </dl>
+            <dl class="option-items" data-option="alignItems">
+              <dt class="option-name">align-items:</dt>
+              <dd class="option-select-list">
+                <label for="option_alignItemsStretch" class="option-label">
+                  <input id="option_alignItemsStretch" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="stretch"  type="radio" checked>
+                  <span>stretch</span>
+                </label>
+                <label for="option_alignItemsStart" class="option-label">
+                  <input id="option_alignItemsStart" class="option-check" name="option_alignItems" data-key="align-items" data-target="example-container" value="flex-start"  type="radio">
+                  <span>flex-start</span>
+                </label>
+                <label for="option_alignItemsCenter" class="option-label">
+                  <input id="option_alignItemsCenter" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="center"  type="radio">
+                  <span>center</span>
+                </label>
+                <label for="option_alignItemsEnd" class="option-label">
+                  <input id="option_alignItemsEnd" class="option-check" name="option_alignItems" data-key="align-items" data-target="example-container" value="flex-end"  type="radio">
+                  <span>flex-end</span>
+                </label>
+                <label for="option_alignItemsBaseline" class="option-label">
+                  <input id="option_alignItemsBaseline" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="baseline"  type="radio">
+                  <span>baseline</span>
+                </label>
+              </dd>
+            </dl>
+          </div>
+          <div class="example-view">
+            <div class="example-container" data-option="flex">
+              <div class="example-box flex-box">111111111111</div>
+              <div class="example-box flex-box">222</div>
+              <div class="example-box flex-box">3</div>
+              <div class="example-box flex-box">444444</div>
+              <div class="example-box flex-box">5</div>
+            </div>
+          </div>
+        </div>
+      </section>
       <button class="slide-btn" slide-btn-type="prev">
         <span><i class="fas fa-chevron-left"></i></span>
       </button>
