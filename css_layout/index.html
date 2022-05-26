@@ -504,6 +504,7 @@
               <li desc-index="1">2. 초창기의 reset 작성</li>
               <li desc-index="2">3. reset의 표준화</li>
               <li desc-index="3">4. reset의 적용범위에 대한 고찰</li>
+              <li desc-index="4">5. 레퍼런스</li>
             </ol>
             <div class="desc-contents">
               <ul class="desc-list description-list" desc-index="0">
@@ -560,126 +561,8 @@
                 </ul>
               </ul>
               <ul class="desc-list description-list" desc-index="4">
-                <li>공사중...</li>
+                <li><a href="https://velog.io/@teo/2022-CSS-Reset-%EB%8B%A4%EC%8B%9C-%EC%8D%A8%EB%B3%B4%EA%B8%B0" target="_blank">2022 CSS Reset 다시 써보기! - teo.log</a></li>
               </ul>
-            </div>
-          </div>
-        </div>
-        <div class="slide-example">
-          <div class="option-panel">
-            <dl class="option-items inline-items" data-option="flex">
-              <dt class="option-name">display:</dt>
-              <dd class="option-select-list">
-                <label for="option_flex" class="option-label">
-                  <input id="option_flex" class="option-check" name="option_flex" data-target="example-container" data-key="display" value="flex"  type="radio" checked>
-                  <span>flex</span>
-                </label>
-                <label for="option_inlineFlex" class="option-label">
-                  <input id="option_inlineFlex" class="option-check" name="option_flex" data-target="example-container" data-key="display" value="inline-flex" type="radio">
-                  <span>inline-flex</span>
-                </label>
-              </dd>
-            </dl>
-            <dl class="option-items inline-items ml" data-option="flexDirection">
-              <dt class="option-name">flex-direction:</dt>
-              <dd class="option-select-list">
-                <label for="option_flexDirectionRow" class="option-label">
-                  <input id="option_flexDirectionRow" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="row"  type="radio" checked>
-                  <span>row</span>
-                </label>
-                <label for="option_flexDirectionCol" class="option-label">
-                  <input id="option_flexDirectionCol" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="column"  type="radio">
-                  <span>column</span>
-                </label>
-                <label for="option_flexDirectionRowRev" class="option-label">
-                  <input id="option_flexDirectionRowRev" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="row-reverse"  type="radio">
-                  <span>row-reverse</span>
-                </label>
-                <label for="option_flexDirectionColRev" class="option-label">
-                  <input id="option_flexDirectionColRev" class="option-check" name="option_flexDirection" data-target="example-container" data-key="flex-direction" value="column-reverse"  type="radio">
-                  <span>column-reverse</span>
-                </label>
-              </dd>
-            </dl>
-            <!-- <dl class="option-items inline-items ml" data-option="flexWrap">
-              <dt class="option-name">flex-wrap:</dt>
-              <dd class="option-select-list">
-                <label for="option_flexWrap" class="option-label">
-                  <input id="option_flexWrap" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="nowrap" data-target="example-container" type="radio" checked>
-                  <span>nowrap</span>
-                </label>
-                <label for="option_flexWrap" class="option-label">
-                  <input id="option_flexWrap" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap" data-target="example-container" type="radio">
-                  <span>wrap</span>
-                </label>
-                <label for="option_flexWrapReverse" class="option-label">
-                  <input id="option_flexWrapReverse" class="option-check" name="option_flexWrap" data-key="flex-wrap" value="wrap-reverse" data-target="example-container" type="radio">
-                  <span>wrap-reverse</span>
-                </label>
-              </dd> -->
-            </dl>
-            <dl class="option-items" data-option="justifyContent">
-              <dt class="option-name">justify-content:</dt>
-              <dd class="option-select-list">
-                <label for="option_justifyContentStart" class="option-label">
-                  <input id="option_justifyContentStart" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="flex-start"  type="radio" checked>
-                  <span>flex-start</span>
-                </label>
-                <label for="option_justifyContentCenter" class="option-label">
-                  <input id="option_justifyContentCenter" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="center"  type="radio">
-                  <span>center</span>
-                </label>
-                <label for="option_justifyContentEnd" class="option-label">
-                  <input id="option_justifyContentEnd" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="flex-end"  type="radio">
-                  <span>flex-end</span>
-                </label>
-                <label for="option_justifyContentSP" class="option-label">
-                  <input id="option_justifyContentSP" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-between"  type="radio">
-                  <span>space-between</span>
-                </label>
-                <label for="option_justifyContentSA" class="option-label">
-                  <input id="option_justifyContentSA" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-around"  type="radio">
-                  <span>space-around</span>
-                </label>
-                <label for="option_justifyContentSE" class="option-label">
-                  <input id="option_justifyContentSE" class="option-check" name="option_justifyContent" data-target="example-container" data-key="justify-content" value="space-evenly"  type="radio">
-                  <span>space-evenly</span>
-                </label>
-              </dd>
-            </dl>
-            <dl class="option-items" data-option="alignItems">
-              <dt class="option-name">align-items:</dt>
-              <dd class="option-select-list">
-                <label for="option_alignItemsStretch" class="option-label">
-                  <input id="option_alignItemsStretch" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="stretch"  type="radio" checked>
-                  <span>stretch</span>
-                </label>
-                <label for="option_alignItemsStart" class="option-label">
-                  <input id="option_alignItemsStart" class="option-check" name="option_alignItems" data-key="align-items" data-target="example-container" value="flex-start"  type="radio">
-                  <span>flex-start</span>
-                </label>
-                <label for="option_alignItemsCenter" class="option-label">
-                  <input id="option_alignItemsCenter" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="center"  type="radio">
-                  <span>center</span>
-                </label>
-                <label for="option_alignItemsEnd" class="option-label">
-                  <input id="option_alignItemsEnd" class="option-check" name="option_alignItems" data-key="align-items" data-target="example-container" value="flex-end"  type="radio">
-                  <span>flex-end</span>
-                </label>
-                <label for="option_alignItemsBaseline" class="option-label">
-                  <input id="option_alignItemsBaseline" class="option-check" name="option_alignItems" data-target="example-container" data-key="align-items" value="baseline"  type="radio">
-                  <span>baseline</span>
-                </label>
-              </dd>
-            </dl>
-          </div>
-          <div class="example-view">
-            <div class="example-container" data-option="flex">
-              <div class="example-box flex-box">111111111111</div>
-              <div class="example-box flex-box">222</div>
-              <div class="example-box flex-box">3</div>
-              <div class="example-box flex-box">444444</div>
-              <div class="example-box flex-box">5</div>
             </div>
           </div>
         </div>
